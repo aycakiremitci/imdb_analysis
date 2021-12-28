@@ -20,8 +20,8 @@ def genre_bar(movies):
 
     # visualizing the graph
     plt.figure(figsize=(10, 10))  #
-    sns.barplot(y=ordered_genres, x=sorted_counts, palette="deep")
-    #plt.barh(ordered_genres, sorted_counts, color='green')
+    #sns.barplot(y=ordered_genres, x=sorted_counts, palette="deep")
+    plt.barh(ordered_genres, sorted_counts, color='green')
     plt.xlabel('Percentage of Films (%)')
     plt.title('Distributions of Genres')
     plt.ylabel('Genres')

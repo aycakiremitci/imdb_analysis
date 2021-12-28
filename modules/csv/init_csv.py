@@ -8,6 +8,14 @@ def initialize_data_set():
 
     movies.head()
 
+    movies = movies.assign(**{'has_description': movies.description > ""})
+    movies["year"] = movies["year"].apply(lambda val: float(str(val)))
+    movies["genre_first"] = movies['genre'].apply(lambda val: val.split(',')[0])
+    movies["language_first"] = movies['language'].apply(lambda val: str(val).split(',')[0])
+    movies["country_first"] = movies['country'].apply(lambda val: str(val).split(',')[0])
+
+    print(movies.info())
+
     return movies
 
 
